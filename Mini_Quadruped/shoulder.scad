@@ -37,8 +37,8 @@ module shoulder(st,sc,hr1,hr2,hrd){
 		// button hole bottom
 		translate([ch_st,0,hh]) rotate([0,90,0]) cylinder(r=3,h=6,$fn=100);		
 		// button hole top
-		translate([ch_st-2,0,hh-.1]) rotate([0,90,0]) cylinder(r=5.6,h=3,$fn=100);	
-		//bottom channel
+		translate([ch_st-2,0,hh-.1]) rotate([0,90,0]) cylinder(r=5.6,h=4,$fn=100);	
+		// bottom channel
 		translate([ch_st+5,-5,-1]) cube([2,10,30]);
 	}
 	
@@ -52,6 +52,17 @@ module shoulder(st,sc,hr1,hr2,hrd){
 		}
 		//servo horn hole
 		translate([hr_st,0,hh]) rotate([0,90,0]) cylinder(r=hr1,h=6,$fn=100);
+		//translate([hr_st,0,hh]) rotate([0,90,0]) cylinder(r=hr1+2,h=2,$fn=100);
+
+		difference(){
+		translate([hr_st+5.1-0.8,0,hh]) rotate([0,90,0]) cylinder(r=7.1, h=0.8, $fn=100);
+		translate([hr_st+5.1-0.8,0,hh]) rotate([0,90,0]) cylinder(r=4.9, h=0.8, $fn=100);
+		translate([hr_st+5.1-0.8,0,hh+7.1]) {
+			//The cube for cutting 
+			# cube(size = 14.2, center = true);
+		}
+		}
+
 		//servo horn channel
 		hull(){	
 			//top channel
@@ -68,7 +79,7 @@ module shoulder(st,sc,hr1,hr2,hrd){
 	
 	difference(){
 		//main plate
-		translate([-19,-8,0]) cube([37,16,plate_thick]);
+		translate([-17.5,-8,0]) cube([35.1,16,plate_thick]);
 		//screw holes
 		for (i = [[offset_x-.5,offset_y,-1],[offset_x-.5,-offset_y,-1],[-offset_x-.5,offset_y,-1],[-offset_x-.5,-offset_y,-1]]){	
 			translate(i) cylinder(r=m3_screw_dia/2, h=plate_thick+2, $fn=20);
