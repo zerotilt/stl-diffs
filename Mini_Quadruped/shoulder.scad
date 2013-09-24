@@ -18,7 +18,7 @@ module shoulder(st,sc,hr1,hr2,hrd){
 	m3_screw_head_dia = 7;
 	m3_screw_head_height = 1.75;
 	m3_nut_wrench_size = 6.5;
-	m3_nut_height = 1.75;
+	m3_nut_height = 2.25;
 
 	//calc'd starts
 	ch_st = (st/2)-1;
@@ -55,11 +55,11 @@ module shoulder(st,sc,hr1,hr2,hrd){
 		//translate([hr_st,0,hh]) rotate([0,90,0]) cylinder(r=hr1+2,h=2,$fn=100);
 
 		difference(){
-		translate([hr_st+5.1-0.8,0,hh]) rotate([0,90,0]) cylinder(r=7.1, h=0.8, $fn=100);
-		translate([hr_st+5.1-0.8,0,hh]) rotate([0,90,0]) cylinder(r=4.9, h=0.8, $fn=100);
-		translate([hr_st+5.1-0.8,0,hh+7.1]) {
+		translate([hr_st+5.1-0.8,0,hh]) rotate([0,90,0]) cylinder(r=6.6, h=0.8, $fn=100);
+		translate([hr_st+5.1-0.8,0,hh]) rotate([0,90,0]) cylinder(r=5.4, h=0.8, $fn=100);
+		translate([hr_st+5.1-0.8,0,hh-6.6]) {
 			//The cube for cutting 
-			# cube(size = 14.2, center = true);
+			# cube(size = 13.2, center = true);
 		}
 		}
 
