@@ -78,6 +78,7 @@ such that the Mini Quadruped sits flat with legs stretch out
  - PB (aka zer0tilt)
 
 /////////////////////////////////////////////////////
+*/
 
 #include <NewPing.h>
 #include <Servo.h>
